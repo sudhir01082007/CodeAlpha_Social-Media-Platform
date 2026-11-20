@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - ConnectHub</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- ================= Top Navigation Bar ================= -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <i class="fa-solid fa-users-rays"></i>
+        <span>ConnectHub</span>
+      </a>
+
+      <nav class="nav-links" id="navMenu">
+        <a href="index.html" class="nav-link">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
+        <a href="profile.html" class="nav-link">
+          <i class="fa-regular fa-user"></i>
+          <span>Profile</span>
+        </a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="register.html" class="btn btn-primary">
+          <i class="fa-solid fa-user-plus"></i>
+          <span>Create Account</span>
+        </a>
+        <button class="mobile-nav-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Login Section ================= -->
+  <main class="auth-page-wrapper">
+    <div class="auth-card">
+      <div class="auth-header">
+        <a href="index.html" class="brand-logo">
+          <i class="fa-solid fa-users-rays"></i>
+          <span>ConnectHub</span>
+        </a>
+        <h2>Welcome Back</h2>
+        <p>Log in to connect with your developer community</p>
+      </div>
+
+      <!-- Demo Credentials Helper Box -->
+      <div class="demo-badge-box">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>Demo: <strong>sarah@connecthub.io</strong> / <strong>password123</strong></span>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm" class="auth-form">
+        <!-- Email Input -->
+        <div class="form-group">
+          <label for="loginEmail" class="form-label">Email Address</label>
+          <div class="input-with-icon">
+            <i class="fa-regular fa-envelope field-icon"></i>
+            <input 
+              type="email" 
+              id="loginEmail" 
+              placeholder="name@example.com" 
+              value="sarah@connecthub.io" 
+              required
+            >
+          </div>
+        </div>
+
+        <!-- Password Input with Toggle -->
+        <div class="form-group">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <label for="loginPassword" class="form-label">Password</label>
+            <a href="#" style="font-size: 12.5px;" id="forgotPasswordLink">Forgot password?</a>
+          </div>
+          <div class="input-with-icon">
+            <i class="fa-solid fa-lock field-icon"></i>
+            <input 
+              type="password" 
+              id="loginPassword" 
+              placeholder="Enter your password" 
+              value="password123" 
+              required
+            >
+            <i class="fa-regular fa-eye toggle-password" data-target="loginPassword" title="Show/Hide Password"></i>
+          </div>
+        </div>
+
+        <!-- Remember Me Checkbox -->
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--text-secondary);">
+          <input type="checkbox" id="rememberMe" checked style="cursor: pointer;">
+          <label for="rememberMe" style="cursor: pointer;">Remember me on this device</label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary btn-block" style="padding: 12px; font-size: 15px;">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i>
+          <span>Log In</span>
+        </button>
+      </form>
+
+      <!-- Auth Footer with Register Link -->
+      <div class="auth-footer">
+        Don't have an account yet? 
+        <a href="register.html">Sign up for ConnectHub</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- JavaScript Interaction File -->
+  <script src="script.js"></script>
+</body>
+</html>
+

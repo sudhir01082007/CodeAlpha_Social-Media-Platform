@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account - ConnectHub</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- ================= Top Navigation Bar ================= -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <i class="fa-solid fa-users-rays"></i>
+        <span>ConnectHub</span>
+      </a>
+
+      <nav class="nav-links" id="navMenu">
+        <a href="index.html" class="nav-link">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
+        <a href="profile.html" class="nav-link">
+          <i class="fa-regular fa-user"></i>
+          <span>Profile</span>
+        </a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-light">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i>
+          <span>Log In</span>
+        </a>
+        <button class="mobile-nav-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Register Section ================= -->
+  <main class="auth-page-wrapper">
+    <div class="auth-card" style="max-width: 480px;">
+      <div class="auth-header">
+        <a href="index.html" class="brand-logo">
+          <i class="fa-solid fa-users-rays"></i>
+          <span>ConnectHub</span>
+        </a>
+        <h2>Join ConnectHub</h2>
+        <p>Create an account to share ideas, code, and connect</p>
+      </div>
+
+      <!-- Registration Form -->
+      <form id="registerForm" class="auth-form">
+        <!-- Full Name Input -->
+        <div class="form-group">
+          <label for="regFullName" class="form-label">Full Name</label>
+          <div class="input-with-icon">
+            <i class="fa-regular fa-user field-icon"></i>
+            <input 
+              type="text" 
+              id="regFullName" 
+              placeholder="e.g. Sarah Connor" 
+              required
+            >
+          </div>
+        </div>
+
+        <!-- Username Input -->
+        <div class="form-group">
+          <label for="regUsername" class="form-label">Username</label>
+          <div class="input-with-icon">
+            <i class="fa-solid fa-at field-icon"></i>
+            <input 
+              type="text" 
+              id="regUsername" 
+              placeholder="e.g. sarah_codes" 
+              pattern="^[a-zA-Z0-9_]{3,20}$"
+              title="3-20 characters, alphanumeric and underscores only"
+              required
+            >
+          </div>
+          <span class="form-helper">Only letters, numbers, and underscores (3-20 chars)</span>
+        </div>
+
+        <!-- Email Input -->
+        <div class="form-group">
+          <label for="regEmail" class="form-label">Email Address</label>
+          <div class="input-with-icon">
+            <i class="fa-regular fa-envelope field-icon"></i>
+            <input 
+              type="email" 
+              id="regEmail" 
+              placeholder="name@example.com" 
+              required
+            >
+          </div>
+        </div>
+
+        <!-- Password Input -->
+        <div class="form-group">
+          <label for="regPassword" class="form-label">Password</label>
+          <div class="input-with-icon">
+            <i class="fa-solid fa-lock field-icon"></i>
+            <input 
+              type="password" 
+              id="regPassword" 
+              placeholder="Create a strong password (min 6 chars)" 
+              minlength="6"
+              required
+            >
+            <i class="fa-regular fa-eye toggle-password" data-target="regPassword" title="Show/Hide Password"></i>
+          </div>
+        </div>
+
+        <!-- Confirm Password Input -->
+        <div class="form-group">
+          <label for="regConfirmPassword" class="form-label">Confirm Password</label>
+          <div class="input-with-icon">
+            <i class="fa-solid fa-shield-halved field-icon"></i>
+            <input 
+              type="password" 
+              id="regConfirmPassword" 
+              placeholder="Re-enter your password" 
+              required
+            >
+            <i class="fa-regular fa-eye toggle-password" data-target="regConfirmPassword" title="Show/Hide Password"></i>
+          </div>
+          <span class="form-helper" id="passwordMatchMessage" style="display: none; color: var(--like-color);"></span>
+        </div>
+
+        <!-- Terms Agreement Checkbox -->
+        <div style="display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--text-secondary);">
+          <input type="checkbox" id="agreeTerms" required style="margin-top: 3px; cursor: pointer;">
+          <label for="agreeTerms" style="cursor: pointer;">
+            I agree to ConnectHub's <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary btn-block" style="padding: 12px; font-size: 15px;">
+          <i class="fa-solid fa-user-plus"></i>
+          <span>Create Account</span>
+        </button>
+      </form>
+
+      <!-- Auth Footer with Login Link -->
+      <div class="auth-footer">
+        Already have an account? 
+        <a href="login.html">Log in here</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- JavaScript Interaction File -->
+  <script src="script.js"></script>
+</body>
+</html>
+

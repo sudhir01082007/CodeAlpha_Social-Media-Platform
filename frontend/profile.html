@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarah Connor (@sarah_codes) - ConnectHub</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- ================= Top Navigation Bar ================= -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <i class="fa-solid fa-users-rays"></i>
+        <span>ConnectHub</span>
+      </a>
+
+      <!-- Search Bar -->
+      <div class="nav-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search profiles, tags...">
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links" id="navMenu">
+        <a href="index.html" class="nav-link">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
+        <a href="index.html#explore" class="nav-link">
+          <i class="fa-regular fa-compass"></i>
+          <span>Explore</span>
+        </a>
+        <a href="profile.html" class="nav-link active">
+          <i class="fa-solid fa-user"></i>
+          <span>Profile</span>
+        </a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-secondary" title="Sign out / Switch account">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span>Sign Out</span>
+        </a>
+        <button class="mobile-nav-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Profile Main Section ================= -->
+  <main class="profile-wrapper">
+    <!-- Profile Card Header -->
+    <div class="profile-card">
+      <!-- Cover Banner -->
+      <div class="profile-cover"></div>
+
+      <!-- Profile Details Area -->
+      <div class="profile-details-section">
+        <div class="profile-main-row">
+          <div class="profile-avatar-wrapper">
+            <img 
+              id="profileAvatarImg" 
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=260&q=80" 
+              alt="Sarah Connor" 
+              class="avatar avatar-xl"
+            >
+          </div>
+
+          <!-- Action Buttons (Edit Profile) -->
+          <div class="profile-actions-bar">
+            <button class="btn btn-secondary" id="btnOpenEditProfile">
+              <i class="fa-solid fa-pen-to-square"></i>
+              <span>Edit Profile</span>
+            </button>
+            <button class="btn btn-light" id="btnShareProfile" title="Share Profile">
+              <i class="fa-solid fa-arrow-up-from-bracket"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- User Information -->
+        <div class="profile-info">
+          <div class="profile-names">
+            <h2 id="profileDisplayName">Sarah Connor</h2>
+            <i class="fa-solid fa-circle-check verified-badge" title="Verified Creator"></i>
+          </div>
+          <p class="profile-handle" id="profileDisplayUsername">@sarah_codes</p>
+
+          <p class="profile-bio" id="profileDisplayBio">
+            Full Stack Developer & Open Source Enthusiast 👩‍💻 | Building ConnectHub Mini Social Platform | Passionate about Node.js, Express, MongoDB, and sleek UI design. Let's connect and innovate!
+          </p>
+
+          <div class="profile-meta-list">
+            <div class="profile-meta-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Bengaluru, India</span>
+            </div>
+            <div class="profile-meta-item">
+              <i class="fa-solid fa-link"></i>
+              <a href="#" target="_blank">github.com/sarahconnor</a>
+            </div>
+            <div class="profile-meta-item">
+              <i class="fa-regular fa-calendar"></i>
+              <span>Joined November 2024</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Followers / Following / Posts Counts -->
+        <div class="profile-stats-row">
+          <div class="profile-stat-box">
+            <strong id="statPostsCount">6</strong>
+            <span>Posts</span>
+          </div>
+          <div class="profile-stat-box">
+            <strong id="statFollowersCount">4,280</strong>
+            <span>Followers</span>
+          </div>
+          <div class="profile-stat-box">
+            <strong id="statFollowingCount">520</strong>
+            <span>Following</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Navigation Tabs -->
+    <div class="profile-tabs">
+      <button class="profile-tab-btn active" data-tab="posts">
+        <i class="fa-solid fa-table-cells"></i>
+        <span>POSTS</span>
+      </button>
+      <button class="profile-tab-btn" data-tab="saved">
+        <i class="fa-regular fa-bookmark"></i>
+        <span>SAVED</span>
+      </button>
+      <button class="profile-tab-btn" data-tab="tagged">
+        <i class="fa-regular fa-id-badge"></i>
+        <span>TAGGED</span>
+      </button>
+    </div>
+
+    <!-- User Posts Grid -->
+    <div class="user-posts-grid" id="profilePostsGrid">
+
+      <!-- Post Grid Item 1 -->
+      <div class="grid-post-item" data-caption="New dev workstation setup with ergonomic dual monitor layout!">
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" alt="Workstation">
+        <div class="grid-post-overlay">
+          <span><i class="fa-solid fa-heart"></i> 254</span>
+          <span><i class="fa-solid fa-comment"></i> 32</span>
+        </div>
+      </div>
+
+      <!-- Post Grid Item 2 -->
+      <div class="grid-post-item" data-caption="Exploring modern blue and clean typography design systems.">
+        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="Web Design">
+        <div class="grid-post-overlay">
+          <span><i class="fa-solid fa-heart"></i> 189</span>
+          <span><i class="fa-solid fa-comment"></i> 14</span>
+        </div>
+      </div>
+
+      <!-- Post Grid Item 3 -->
+      <div class="grid-post-item" data-caption="Morning coffee and bug fixing before the product standup.">
+        <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=600&q=80" alt="Coffee and code">
+        <div class="grid-post-overlay">
+          <span><i class="fa-solid fa-heart"></i> 310</span>
+          <span><i class="fa-solid fa-comment"></i> 41</span>
+        </div>
+      </div>
+
+      <!-- Post Grid Item 4 -->
+      <div class="grid-post-item" data-caption="Celebrating internship milestone with the engineering team!">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Team meeting">
+        <div class="grid-post-overlay">
+          <span><i class="fa-solid fa-heart"></i> 420</span>
+          <span><i class="fa-solid fa-comment"></i> 58</span>
+        </div>
+      </div>
+
+      <!-- Post Grid Item 5 -->
+      <div class="grid-post-item" data-caption="Deep dive into MongoDB indexes and aggregation pipelines.">
+        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Code matrices">
+        <div class="grid-post-overlay">
+          <span><i class="fa-solid fa-heart"></i> 175</span>
+          <span><i class="fa-solid fa-comment"></i> 22</span>
+        </div>
+      </div>
+
+      <!-- Post Grid Item 6 -->
+      <div class="grid-post-item" data-caption="Sunset coding retreat with panoramic city skyline views.">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" alt="Tech workspace">
+        <div class="grid-post-overlay">
+          <span><i class="fa-solid fa-heart"></i> 512</span>
+          <span><i class="fa-solid fa-comment"></i> 64</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ================= Edit Profile Modal ================= -->
+  <div class="modal-backdrop" id="editProfileModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3>Edit Profile</h3>
+        <button class="btn-icon" id="btnCloseEditModal" aria-label="Close Modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form id="editProfileForm">
+        <div class="modal-body">
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label for="editFullName" class="form-label">Full Name</label>
+            <input type="text" id="editFullName" class="input-with-icon" style="padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); width: 100%;" value="Sarah Connor" required>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label for="editUsername" class="form-label">Username</label>
+            <input type="text" id="editUsername" class="input-with-icon" style="padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); width: 100%;" value="sarah_codes" required>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label for="editAvatarUrl" class="form-label">Avatar Image URL</label>
+            <input type="url" id="editAvatarUrl" class="input-with-icon" style="padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); width: 100%;" value="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=260&q=80">
+          </div>
+
+          <div class="form-group">
+            <label for="editBio" class="form-label">Bio</label>
+            <textarea id="editBio" rows="3" style="width: 100%; padding: 10px 14px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); resize: vertical; font-family: inherit;">Full Stack Developer & Open Source Enthusiast 👩‍💻 | Building ConnectHub Mini Social Platform | Passionate about Node.js, Express, MongoDB, and sleek UI design. Let's connect and innovate!</textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="btnCancelEditModal">Cancel</button>
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-floppy-disk"></i>
+            <span>Save Changes</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- JavaScript Interaction File -->
+  <script src="script.js"></script>
+</body>
+</html>
+

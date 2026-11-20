@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConnectHub - Mini Social Media Platform</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome CDN for Modern Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- ================= Top Navigation Bar ================= -->
+  <header class="navbar">
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="index.html" class="brand-logo">
+        <i class="fa-solid fa-users-rays"></i>
+        <span>ConnectHub</span>
+      </a>
+
+      <!-- Search Bar -->
+      <div class="nav-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="feedSearchInput" placeholder="Search ConnectHub...">
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links" id="navMenu">
+        <a href="index.html" class="nav-link active">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
+        <a href="#explore" class="nav-link" id="navExploreBtn">
+          <i class="fa-regular fa-compass"></i>
+          <span>Explore</span>
+        </a>
+        <a href="profile.html" class="nav-link">
+          <i class="fa-regular fa-user"></i>
+          <span>Profile</span>
+        </a>
+      </nav>
+
+      <!-- Nav Actions & Profile -->
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-light" title="Account Access">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i>
+          <span>Login</span>
+        </a>
+        <a href="profile.html" class="nav-profile-link" title="My Profile">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Sarah Connor" class="avatar avatar-sm">
+        </a>
+        <button class="mobile-nav-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Main Body Layout ================= -->
+  <main class="main-wrapper">
+    <div class="container feed-layout">
+
+      <!-- ===== Left Sidebar (Navigation & Quick Profile) ===== -->
+      <aside class="left-sidebar">
+        <!-- Quick Profile Card -->
+        <div class="card sidebar-profile-card">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Sarah Connor" class="avatar avatar-lg">
+          <h3>Sarah Connor</h3>
+          <p>@sarah_codes</p>
+          <div class="sidebar-stats">
+            <div class="sidebar-stat-item">
+              <span class="stat-num">128</span>
+              <span class="stat-label">Posts</span>
+            </div>
+            <div class="sidebar-stat-item">
+              <span class="stat-num">4.2k</span>
+              <span class="stat-label">Followers</span>
+            </div>
+            <div class="sidebar-stat-item">
+              <span class="stat-num">520</span>
+              <span class="stat-label">Following</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Left Navigation Menu -->
+        <div class="card">
+          <div class="side-menu">
+            <a href="index.html" class="side-menu-link active">
+              <i class="fa-solid fa-house"></i>
+              <span>Home Feed</span>
+            </a>
+            <a href="#explore" class="side-menu-link">
+              <i class="fa-solid fa-compass"></i>
+              <span>Explore Trends</span>
+            </a>
+            <a href="profile.html" class="side-menu-link">
+              <i class="fa-solid fa-user"></i>
+              <span>My Profile</span>
+            </a>
+            <a href="login.html" class="side-menu-link">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>Authentication</span>
+            </a>
+            <a href="register.html" class="side-menu-link">
+              <i class="fa-solid fa-user-plus"></i>
+              <span>Create Account</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ===== Center Column: Stories, Create Post, and Feed ===== -->
+      <section class="feed-content">
+
+        <!-- Stories Reel -->
+        <div class="stories-container">
+          <!-- User's Story Add -->
+          <div class="story-item my-story">
+            <div class="story-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="My Story" class="story-avatar">
+              <div class="story-plus-badge"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <span class="story-username">Your Story</span>
+          </div>
+
+          <!-- Friend Stories -->
+          <div class="story-item">
+            <div class="story-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=120&q=80" alt="Alex" class="story-avatar">
+            </div>
+            <span class="story-username">alex_dev</span>
+          </div>
+          <div class="story-item">
+            <div class="story-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="Emily" class="story-avatar">
+            </div>
+            <span class="story-username">emily_ui</span>
+          </div>
+          <div class="story-item">
+            <div class="story-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Marcus" class="story-avatar">
+            </div>
+            <span class="story-username">marcus_k</span>
+          </div>
+          <div class="story-item">
+            <div class="story-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80" alt="Priya" class="story-avatar">
+            </div>
+            <span class="story-username">priya.tech</span>
+          </div>
+          <div class="story-item">
+            <div class="story-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="David" class="story-avatar">
+            </div>
+            <span class="story-username">david_w</span>
+          </div>
+        </div>
+
+        <!-- Create Post Card -->
+        <div class="create-post-card">
+          <div class="create-post-top">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Sarah Connor" class="avatar avatar-md">
+            <textarea id="createPostCaption" class="create-post-input" placeholder="What's on your mind, Sarah? Share a project update or photo..."></textarea>
+          </div>
+
+          <!-- Optional Image URL Input Section -->
+          <div class="image-url-input-container" id="imageUrlContainer">
+            <input type="url" id="createPostImageUrl" placeholder="Paste image URL (e.g. https://images.unsplash.com/...)">
+            <button type="button" class="btn btn-secondary" id="btnPreviewImage">Preview</button>
+          </div>
+
+          <!-- Image Preview Area -->
+          <div class="image-preview-box" id="postImagePreviewBox">
+            <img id="postPreviewImg" src="" alt="Preview">
+            <button type="button" class="btn-remove-preview" id="btnRemovePreview" title="Remove Image">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <div class="create-post-actions">
+            <div class="post-media-options">
+              <button type="button" class="media-opt-btn opt-photo" id="btnToggleImageInput">
+                <i class="fa-regular fa-image"></i>
+                <span>Photo / URL</span>
+              </button>
+              <button type="button" class="media-opt-btn opt-tag" id="btnTagFriends">
+                <i class="fa-solid fa-user-tag"></i>
+                <span>Tag</span>
+              </button>
+              <button type="button" class="media-opt-btn opt-feeling" id="btnFeeling">
+                <i class="fa-regular fa-face-smile"></i>
+                <span>Feeling</span>
+              </button>
+            </div>
+            <button type="button" class="btn btn-primary" id="btnSubmitPost">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Post</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Posts Feed Container -->
+        <div id="postsFeedContainer" class="feed-content">
+
+          <!-- Sample Post 1 -->
+          <article class="post-card" data-post-id="1">
+            <!-- Post Header -->
+            <div class="post-header">
+              <div class="post-author">
+                <a href="profile.html">
+                  <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&q=80" alt="Alex Rivera" class="avatar avatar-md">
+                </a>
+                <div class="author-info">
+                  <h4><a href="profile.html">Alex Rivera</a></h4>
+                  <div class="author-meta">
+                    <span>@alex_dev</span>
+                    <span class="separator">•</span>
+                    <span>2 hours ago</span>
+                  </div>
+                </div>
+              </div>
+              <button class="btn-icon" title="Post Options">
+                <i class="fa-solid fa-ellipsis"></i>
+              </button>
+            </div>
+
+            <!-- Post Caption -->
+            <div class="post-caption">
+              Excited to announce that our team just completed the first sprint of our Full Stack ConnectHub architecture! 🚀 Built with clean vanilla JavaScript and robust Express backend services.
+              <span class="post-tags">
+                <a href="#">#WebDevelopment</a>
+                <a href="#">#ConnectHub</a>
+                <a href="#">#FullStack</a>
+              </span>
+            </div>
+
+            <!-- Post Image -->
+            <div class="post-image-container">
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80" alt="Coding Workspace">
+              <i class="fa-solid fa-heart post-heart-animation"></i>
+            </div>
+
+            <!-- Post Stats -->
+            <div class="post-stats">
+              <div class="post-stats-left">
+                <span class="stat-icon-like"><i class="fa-solid fa-heart"></i></span>
+                <span class="like-counter" data-count="142">142 likes</span>
+              </div>
+              <div class="post-stats-right">
+                <span class="comment-counter">18 comments</span>
+              </div>
+            </div>
+
+            <!-- Post Actions -->
+            <div class="post-actions">
+              <button type="button" class="post-action-btn btn-like">
+                <i class="fa-regular fa-heart"></i>
+                <span>Like</span>
+              </button>
+              <button type="button" class="post-action-btn btn-comment-focus">
+                <i class="fa-regular fa-comment"></i>
+                <span>Comment</span>
+              </button>
+              <button type="button" class="post-action-btn btn-share">
+                <i class="fa-regular fa-paper-plane"></i>
+                <span>Share</span>
+              </button>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="post-comments-section">
+              <div class="comments-list">
+                <div class="comment-item">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="Emily Chen" class="avatar avatar-sm">
+                  <div class="comment-bubble">
+                    <span class="comment-user">Emily Chen</span>
+                    <span class="comment-text">This setup looks super clean, Alex! Loving the blue & white UI aesthetic. 🔥</span>
+                    <div class="comment-meta">
+                      <span>45m ago</span>
+                      <a href="#">Like</a>
+                      <a href="#">Reply</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="comment-item">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80" alt="Marcus Thorne" class="avatar avatar-sm">
+                  <div class="comment-bubble">
+                    <span class="comment-user">Marcus Thorne</span>
+                    <span class="comment-text">Great milestone! Can't wait to test the REST APIs next week.</span>
+                    <div class="comment-meta">
+                      <span>20m ago</span>
+                      <a href="#">Like</a>
+                      <a href="#">Reply</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Add Comment Input -->
+              <form class="add-comment-form">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="Sarah Connor" class="avatar avatar-sm">
+                <div class="comment-input-wrapper">
+                  <input type="text" class="comment-input" placeholder="Write a comment..." required>
+                  <button type="submit" class="btn-post-comment">Post</button>
+                </div>
+              </form>
+            </div>
+          </article>
+
+          <!-- Sample Post 2 -->
+          <article class="post-card" data-post-id="2">
+            <!-- Post Header -->
+            <div class="post-header">
+              <div class="post-author">
+                <a href="profile.html">
+                  <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=100&q=80" alt="Priya Sharma" class="avatar avatar-md">
+                </a>
+                <div class="author-info">
+                  <h4><a href="profile.html">Priya Sharma</a></h4>
+                  <div class="author-meta">
+                    <span>@priya.tech</span>
+                    <span class="separator">•</span>
+                    <span>5 hours ago</span>
+                  </div>
+                </div>
+              </div>
+              <button class="btn-icon" title="Post Options">
+                <i class="fa-solid fa-ellipsis"></i>
+              </button>
+            </div>
+
+            <!-- Post Caption -->
+            <div class="post-caption">
+              Weekend design sprint in progress! 🎨 Clean components, minimal white space, and pixel-perfect responsiveness. What do you think of this color palette?
+              <span class="post-tags">
+                <a href="#">#DesignSystem</a>
+                <a href="#">#UIUX</a>
+                <a href="#">#Frontend</a>
+              </span>
+            </div>
+
+            <!-- Post Image -->
+            <div class="post-image-container">
+              <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1000&q=80" alt="Design System Preview">
+              <i class="fa-solid fa-heart post-heart-animation"></i>
+            </div>
+
+            <!-- Post Stats -->
+            <div class="post-stats">
+              <div class="post-stats-left">
+                <span class="stat-icon-like"><i class="fa-solid fa-heart"></i></span>
+                <span class="like-counter" data-count="89">89 likes</span>
+              </div>
+              <div class="post-stats-right">
+                <span class="comment-counter">7 comments</span>
+              </div>
+            </div>
+
+            <!-- Post Actions -->
+            <div class="post-actions">
+              <button type="button" class="post-action-btn btn-like">
+                <i class="fa-regular fa-heart"></i>
+                <span>Like</span>
+              </button>
+              <button type="button" class="post-action-btn btn-comment-focus">
+                <i class="fa-regular fa-comment"></i>
+                <span>Comment</span>
+              </button>
+              <button type="button" class="post-action-btn btn-share">
+                <i class="fa-regular fa-paper-plane"></i>
+                <span>Share</span>
+              </button>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="post-comments-section">
+              <div class="comments-list">
+                <div class="comment-item">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt="David Wright" class="avatar avatar-sm">
+                  <div class="comment-bubble">
+                    <span class="comment-user">David Wright</span>
+                    <span class="comment-text">The contrast ratios are spot-on. Looks great on OLED displays too!</span>
+                    <div class="comment-meta">
+                      <span>2h ago</span>
+                      <a href="#">Like</a>
+                      <a href="#">Reply</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Add Comment Input -->
+              <form class="add-comment-form">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="Sarah Connor" class="avatar avatar-sm">
+                <div class="comment-input-wrapper">
+                  <input type="text" class="comment-input" placeholder="Write a comment..." required>
+                  <button type="submit" class="btn-post-comment">Post</button>
+                </div>
+              </form>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ===== Right Sidebar (Suggested Users & Footer) ===== -->
+      <aside class="right-sidebar">
+        <!-- Suggested Users Widget -->
+        <div class="sidebar-widget">
+          <div class="widget-title">
+            <span>Suggested For You</span>
+            <a href="#" id="seeAllSuggestedBtn">See All</a>
+          </div>
+
+          <div class="suggested-users-list">
+            <!-- Suggested User 1 -->
+            <div class="suggested-user-item">
+              <div class="suggested-user-info">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="Elena Rostova" class="avatar avatar-md">
+                <div class="suggested-user-details">
+                  <a href="profile.html" class="suggested-name">Elena Rostova</a>
+                  <span class="suggested-subtext">Followed by alex_dev + 3 more</span>
+                </div>
+              </div>
+              <button class="btn btn-light btn-follow">Follow</button>
+            </div>
+
+            <!-- Suggested User 2 -->
+            <div class="suggested-user-item">
+              <div class="suggested-user-info">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80" alt="Jason Miller" class="avatar avatar-md">
+                <div class="suggested-user-details">
+                  <a href="profile.html" class="suggested-name">Jason Miller</a>
+                  <span class="suggested-subtext">Full Stack Engineer @ TechHub</span>
+                </div>
+              </div>
+              <button class="btn btn-light btn-follow">Follow</button>
+            </div>
+
+            <!-- Suggested User 3 -->
+            <div class="suggested-user-item">
+              <div class="suggested-user-info">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="Sophie Laurent" class="avatar avatar-md">
+                <div class="suggested-user-details">
+                  <a href="profile.html" class="suggested-name">Sophie Laurent</a>
+                  <span class="suggested-subtext">New to ConnectHub</span>
+                </div>
+              </div>
+              <button class="btn btn-light btn-follow">Follow</button>
+            </div>
+
+            <!-- Suggested User 4 -->
+            <div class="suggested-user-item">
+              <div class="suggested-user-info">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt="Kevin Zhang" class="avatar avatar-md">
+                <div class="suggested-user-details">
+                  <a href="profile.html" class="suggested-name">Kevin Zhang</a>
+                  <span class="suggested-subtext">DevOps & Cloud Explorer</span>
+                </div>
+              </div>
+              <button class="btn btn-light btn-follow">Follow</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trending Topics Widget -->
+        <div class="sidebar-widget">
+          <div class="widget-title">
+            <span>Explore Trends</span>
+            <i class="fa-solid fa-arrow-trend-up" style="color: var(--primary);"></i>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13.5px;">
+            <div>
+              <span style="font-size: 11.5px; color: var(--text-muted); display: block;">Trending in Tech</span>
+              <strong style="color: var(--text-main);">#ConnectHubInternship</strong>
+              <span style="font-size: 11.5px; color: var(--text-secondary); display: block;">14.2K Posts</span>
+            </div>
+            <div>
+              <span style="font-size: 11.5px; color: var(--text-muted); display: block;">Trending in Development</span>
+              <strong style="color: var(--text-main);">#VanillaJS</strong>
+              <span style="font-size: 11.5px; color: var(--text-secondary); display: block;">8.6K Posts</span>
+            </div>
+            <div>
+              <span style="font-size: 11.5px; color: var(--text-muted); display: block;">Trending in India</span>
+              <strong style="color: var(--text-main);">#MERNStack</strong>
+              <span style="font-size: 11.5px; color: var(--text-secondary); display: block;">22.1K Posts</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Footer -->
+        <footer class="sidebar-footer">
+          <p>
+            <a href="#">About</a> • <a href="#">Help</a> • <a href="#">API</a> • <a href="#">Privacy</a> • <a href="#">Terms</a>
+          </p>
+          <p style="margin-top: 6px;">&copy; 2026 ConnectHub Platform. All rights reserved.</p>
+        </footer>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- JavaScript Interaction File -->
+  <script src="script.js"></script>
+</body>
+</html>
+
