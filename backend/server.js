@@ -16,6 +16,11 @@ app.use(express.json());
 // Serve Static Frontend Files
 app.use(express.static(path.join(__dirname, '../frontend')));
 
+// Clean HTML Route Aliases
+app.get('/login', (req, res) => res.sendFile(path.join(__dirname, '../frontend/login.html')));
+app.get('/register', (req, res) => res.sendFile(path.join(__dirname, '../frontend/register.html')));
+app.get('/profile', (req, res) => res.sendFile(path.join(__dirname, '../frontend/profile.html')));
+
 // Routes
 const authRoutes = require('./routes/auth');
 const postRoutes = require('./routes/posts');

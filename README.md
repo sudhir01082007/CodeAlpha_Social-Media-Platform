@@ -174,6 +174,30 @@ For instant preview and grading:
 
 ---
 
+## ☁️ Deployment on Render (Live Cloud Hosting)
+
+You can deploy ConnectHub as a free **Web Service** on [Render.com](https://render.com):
+
+1. **Sign in to Render**: Go to [dashboard.render.com](https://dashboard.render.com) and sign in with GitHub.
+2. **New Web Service**: Click **New +** ➔ **Web Service** ➔ **Build and deploy from a Git repository**.
+3. **Connect Repository**: Select your repository: `sudhir01082007/CodeAlpha_Social-Media-Platform`.
+4. **Configure Settings**:
+   * **Name**: `connecthub-social` (or your preferred name)
+   * **Region**: Nearest region (e.g. Frankfurt / Oregon / Singapore)
+   * **Branch**: `main`
+   * **Root Directory**: *(Leave empty)*
+   * **Runtime**: `Node`
+   * **Build Command**: `npm install`
+   * **Start Command**: `npm start`
+   * **Instance Type**: `Free`
+5. **Add Environment Variables** (Under *Environment* tab):
+   * `MONGO_URI` = `mongodb+srv://codealpha_user:<your_password>@cluster0.uqwegoe.mongodb.net/connecthub?retryWrites=true&w=majority`
+   * `JWT_SECRET` = `connecthub_super_secret_jwt_key_2026`
+6. **MongoDB Atlas IP Access**: In your MongoDB Atlas dashboard under **Network Access**, ensure `0.0.0.0/0` (*Allow access from anywhere*) is added and **Active**, so Render's cloud servers can connect.
+7. **Deploy**: Click **Deploy Web Service**. Once deployed, Render will provide a live HTTPS URL (e.g. `https://connecthub-social.onrender.com`).
+
+---
+
 ## 📡 REST API Documentation
 
 ### 1. Authentication APIs (`/api/auth`)
