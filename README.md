@@ -5,9 +5,16 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-brightgreen.svg)](https://www.mongodb.com/atlas)
 [![JavaScript](https://img.shields.io/badge/Frontend-Vanilla%20JavaScript-yellow.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![CSS3](https://img.shields.io/badge/Design-HTML5%20%2F%20CSS3-blue.svg)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![Render Deployment](https://img.shields.io/badge/Render-Deployed%20Live-success?logo=render&logoColor=white)](https://dashboard.render.com)
 [![Internship](https://img.shields.io/badge/CodeAlpha-Task%202-blueviolet.svg)](https://www.codealpha.tech/)
 
 > **ConnectHub** is a modern, responsive, full-stack mini social media platform inspired by Instagram and Facebook. Developed as part of the **CodeAlpha Full Stack Web Development Internship (Task 2)**, ConnectHub features user authentication, a live social feed, post publishing, comments, like interactions, and a creator follow/unfollow system.
+
+### 🌐 Live Production Deployment
+* **Live Web Service**: [ConnectHub on Render](https://codealpha-social-media-platform.onrender.com) *(Deployed on Render Cloud)*
+* **Cloud Platform**: [Render](https://render.com/) (Web Service)
+* **Database**: MongoDB Atlas Cloud Database (`connecthub`)
+* **Environment Status**: Live & Operational
 
 ---
 
@@ -70,6 +77,7 @@
 ```text
 ConnectHub/
 ├── .gitignore                      # Root Git ignore rules (protects .env & node_modules)
+├── package.json                    # Root cloud deployment orchestration (npm install & start)
 ├── README.md                       # Comprehensive project documentation
 ├── frontend/                       # Client-side presentation layer
 │   ├── index.html                  # Main feed, stories & post creation page
@@ -77,14 +85,14 @@ ConnectHub/
 │   ├── register.html               # New user registration page
 │   ├── profile.html                # User profile & posts grid page
 │   ├── style.css                   # Global responsive stylesheet (Blue & White theme)
-│   └── script.js                   # Client-side logic, API calls & DOM interactions
+│   └── script.js                   # Client-side logic, dynamic API routing & DOM interactions
 └── backend/                        # Server-side REST API & database logic
     ├── .env                        # Private environment variables (Git-ignored)
     ├── .env.example                # Safe environment template with placeholders
     ├── .gitignore                  # Backend-specific Git ignore rules
     ├── package.json                # Project dependencies and npm scripts
     ├── package-lock.json           # Locked dependency tree
-    ├── server.js                   # Express server initialization & route mounting
+    ├── server.js                   # Express server, route mounting & frontend static serving
     ├── config/
     │   └── db.js                   # MongoDB Atlas Mongoose connection logic
     ├── middleware/
@@ -176,8 +184,18 @@ For instant preview and grading:
 
 ## ☁️ Deployment on Render (Live Cloud Hosting)
 
-You can deploy ConnectHub as a free **Web Service** on [Render.com](https://render.com):
+ConnectHub is configured and deployed as a full-stack **Web Service** on [Render.com](https://render.com):
 
+### 🌟 Successful Deployment Architecture
+* **Single-Service Full Stack**: Express serves both frontend static assets (`frontend/`) and REST API endpoints (`/api/*`) seamlessly from a single host, eliminating CORS latency and origin mismatch issues.
+* **Root Build & Start Pipeline**: Root `package.json` provides automated orchestration:
+  * `npm install` runs `postinstall` to install backend dependencies inside `backend/`.
+  * `npm start` executes `node backend/server.js`.
+* **Dynamic Environment Port**: Express binds to `process.env.PORT || 5000`, automatically adapting to Render's allocated port.
+* **Cloud Database**: Directly connects to MongoDB Atlas using the `MONGO_URI` secret with `0.0.0.0/0` IP access.
+* **Client Dynamic Routing**: `frontend/script.js` uses relative `/api` paths in production to automatically match HTTPS origin.
+
+### 📋 Setup & Deployment Steps on Render
 1. **Sign in to Render**: Go to [dashboard.render.com](https://dashboard.render.com) and sign in with GitHub.
 2. **New Web Service**: Click **New +** ➔ **Web Service** ➔ **Build and deploy from a Git repository**.
 3. **Connect Repository**: Select your repository: `sudhir01082007/CodeAlpha_Social-Media-Platform`.
@@ -193,8 +211,15 @@ You can deploy ConnectHub as a free **Web Service** on [Render.com](https://rend
 5. **Add Environment Variables** (Under *Environment* tab):
    * `MONGO_URI` = `mongodb+srv://codealpha_user:<your_password>@cluster0.uqwegoe.mongodb.net/connecthub?retryWrites=true&w=majority`
    * `JWT_SECRET` = `connecthub_super_secret_jwt_key_2026`
-6. **MongoDB Atlas IP Access**: In your MongoDB Atlas dashboard under **Network Access**, ensure `0.0.0.0/0` (*Allow access from anywhere*) is added and **Active**, so Render's cloud servers can connect.
+6. **MongoDB Atlas Network Access**: In your MongoDB Atlas dashboard under **Network Access**, ensure `0.0.0.0/0` (*Allow access from anywhere*) is added and **Active**, so Render's cloud servers can connect.
 7. **Deploy**: Click **Deploy Web Service**. Once deployed, Render will provide a live HTTPS URL (e.g. `https://connecthub-social.onrender.com`).
+
+### 🔍 Production Verification Checklist
+* [x] Express starts and binds dynamically to `process.env.PORT`.
+* [x] MongoDB Atlas connects successfully to the `connecthub` database.
+* [x] Frontend landing page (`/`), login (`/login`), register (`/register`), and profile (`/profile`) load with clean URLs.
+* [x] User registration, JWT login, and logout work end-to-end.
+* [x] Post creation, photo rendering, like toggles, comments, and creator follow/unfollow sync to MongoDB Atlas.
 
 ---
 
