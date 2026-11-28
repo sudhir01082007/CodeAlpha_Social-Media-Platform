@@ -12,9 +12,11 @@
 
 ### 🌐 Live Production Deployment
 * **Live Web Service**: [ConnectHub on Render](https://codealpha-social-media-platform.onrender.com) *(Deployed on Render Cloud)*
-* **Cloud Platform**: [Render](https://render.com/) (Web Service)
-* **Database**: MongoDB Atlas Cloud Database (`connecthub`)
-* **Environment Status**: Live & Operational
+* **Cloud Platform**: [Render](https://render.com/) (Free Web Service) & [Vercel](https://vercel.com/) (Free Frontend CDN)
+* **Database**: MongoDB Atlas Cloud Database (`connecthub` M0 Sandbox)
+* **Budget**: **₹0 / $0 (100% Free Tier Hosting)**
+* **Step-by-Step Deployment Guide**: See [DEPLOYMENT.md](DEPLOYMENT.md) for full instructions.
+* **Environment Status**: Production Ready & Hardened
 
 ---
 

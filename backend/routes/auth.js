@@ -12,9 +12,13 @@ const { protect } = require('../middleware/auth');
  * @returns {string} Signed JWT Token
  */
 const generateToken = (id, username) => {
-  return jwt.sign({ id, username }, process.env.JWT_SECRET, {
-    expiresIn: '7d'
-  });
+  return jwt.sign(
+    { id, username },
+    process.env.JWT_SECRET || 'connecthub_dev_secret_key_change_in_production',
+    {
+      expiresIn: '7d'
+    }
+  );
 };
 
 // ==============================================================================

@@ -7,11 +7,12 @@
 // ==============================================================================
 // Configuration & Constants
 // ==============================================================================
-// Dynamic API base: uses relative '/api' on production (Render) and Express localhost:5000;
-// falls back to http://localhost:5000/api when served from Live Server (port 5500/8080)
-const API_BASE = (window.location.origin.includes(':5500') || window.location.origin.includes(':8080'))
-  ? 'http://localhost:5000/api'
-  : '/api';
+// Dynamic API base: uses window.CONNECTHUB_API_BASE if defined, relative '/api' on production
+// (Render single-service deployment or Vercel rewrites proxy), and falls back to localhost:5000
+const API_BASE = window.CONNECTHUB_API_BASE ||
+  ((window.location.origin.includes(':5500') || window.location.origin.includes(':8080'))
+    ? 'http://localhost:5000/api'
+    : '/api');
 const DEFAULT_AVATAR = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80';
 
 // ==============================================================================
